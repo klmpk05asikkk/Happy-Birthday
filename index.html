@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halooo...</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 50%; /* Mengurangi lebar container */
+            max-width: 600px; /* Membatasi lebar maksimal container */
+            height: 200px;
+        }
+        .login-container h1 {
+            color: #ff66b2;
+        }
+        .login-container input[type="text"] {
+            width: 50%; /* Mengurangi lebar kolom input */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ff66b2;
+            border-radius: 5px;
+            height: 40px;
+        }
+        .login-container button {
+            background-color: #ff66b2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #ff3385;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Haaaiiiii....</h1>
+        <input type="text" id="username" placeholder="Namamu yaaa...">
+        <br>
+        <button onclick="validateName()">Kesini yukkk...</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <script>
+        function validateName() {
+            const username = document.getElementById('username').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === '' || username !== 'Askhasya') {
+                errorMessage.textContent = 'Masukin namanya yang bener dong cantikkk....';
+            } else {
+                errorMessage.textContent = '';
+                alert('Yeeeyyyyy!!!');
+                // Ganti ke halaman berikutnya jika login berhasil
+                window.location.href = 'hbd.html';
+            }
+        }
+    </script>
+</body>
+</html>

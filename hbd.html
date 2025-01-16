@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sweetieee.....</title>
+<style>
+    body {
+        background-color: pink;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        overflow: hidden; /* Agar bunga tidak terlihat saat keluar dari layar */
+    }
+    .fade-in {
+        animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .word {
+        display: inline-block;
+        opacity: 0;
+        margin-right: 5px; /* Tambahkan spasi antar kata */
+    }
+    .flower {
+        width: 30px;
+        height: 30px;
+        background-image: url('images/flower.png'); /* Ganti dengan URL gambar bunga */
+        background-size: cover;
+        position: absolute;
+        top: -50px; /* Posisi awal di atas layar */
+        animation: fall linear infinite, fadeOut 5s linear infinite;
+    }
+    @keyframes fall {
+        to {
+            transform: translateY(100vh); /* Bunga jatuh dari atas ke bawah */
+        }
+    }
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    .message-box {
+        background-color: #ffb6c1;
+        border: 2px solid #ff69b4;
+        padding: 20px;
+        margin: 20px auto;
+        width: 60%;
+        border-radius: 10px;
+        text-align: justify; /* Perataan rata kanan dan kiri */
+    }
+    .next-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <div class="message-box" id="message"></div>
+    <div class="flower" style="left: 10%; animation-duration: 4s;"></div>
+    <div class="flower" style="left: 30%; animation-duration: 6s; animation-delay: 1s;"></div>
+    <div class="flower" style="left: 50%; animation-duration: 5s; animation-delay: 2s;"></div>
+    <div class="flower" style="left: 70%; animation-duration: 3s; animation-delay: 3s;"></div>
+    <div class="flower" style="left: 90%; animation-duration: 7s; animation-delay: 4s;"></div>
+    <button class="next-button" onclick="nextPage()">Lanjut yuukkk....</button>
+
+<script>
+    const message = "Selamat ulang tahun yaa cantikkk.., I Proud of U, You are the best. Jangan buat senyummu redup dihari yang istimewa ini yaa, jadikan setiap langkahmu lebih berarti. Semoga bulan ini membawa keberkahan dan kebahagiaan, meski ada saja beberapa hal yang membuatmu sedih percayalah dunia ga seburuk ituu, tetap jaga senyuman itu yaaa..., bentarr ini ada sesuatu juga...., next yaaa...";
+    const messageContainer = document.getElementById("message");
+
+    const words = message.split(" ");
+    let delay = 0;
+    words.forEach((word) => {
+        const span = document.createElement("span");
+        span.textContent = word + " ";
+        span.className = "word";
+        span.style.animationDelay = `${delay}s`;
+        messageContainer.appendChild(span);
+        setTimeout(() => span.classList.add("fade-in"), delay * 1000);
+        delay += 0.5;
+    });
+
+    function nextPage() {
+        alert ('Yeeeyyyyy!!!');
+        window.location.href = "gallery.html"; // Ganti dengan URL halaman berikutnya
+    }
+</script>
+</body>
+</html>
